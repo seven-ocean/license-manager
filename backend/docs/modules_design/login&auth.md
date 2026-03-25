@@ -13,7 +13,7 @@
 
 ## 社区版登录设计
 
-用户名和密码硬编码在系统中，默认用户名和密码为 `admin` / `admin@123`
+默认管理员用户名为 `admin`，初始密码由配置 `auth.default_admin_password` 控制
 
 ## 功能模块
 
@@ -35,7 +35,7 @@ Content-Type: application/json
 
 {
   "username": "admin",
-  "password": "admin@123"
+  "password": "<auth.default_admin_password>"
 }
 ```
 

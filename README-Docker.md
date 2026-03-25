@@ -19,9 +19,9 @@ docker compose down
 ```
 
 ### 访问地址（开发）
-- 前端: http://localhost:18080
-- 后端 API: http://localhost:18888
-- MySQL: localhost:13306（数据库、用户、密码见 compose）
+- 前端: http://localhost:28080
+- 后端 API: http://localhost:28888
+- MySQL: localhost:23306（数据库、用户、密码见 compose）
 
 ## 生产环境
 
@@ -39,31 +39,31 @@ docker compose -f docker-compose.prod.yml ps
 - 后端配置文件已通过卷挂载至容器内：
   - 开发：`backend/configs/config.dev.yaml` → 容器内 `/app/backend/cmd/config.yaml`
   - 生产：`backend/configs/config.prod.yaml` → 容器内 `/app/backend/cmd/config.yaml`
-- 前端 Nginx 反向代理已指向容器网络内的 `backend:18888`，无需依赖 `host.docker.internal`。
+- 前端 Nginx 反向代理已指向容器网络内的 `backend:28888`，无需依赖 `host.docker.internal`。
 - 健康检查统一使用 `curl`，后端镜像已内置 `curl`。
 - 如需隐藏后端对外端口，可在生产 compose 中移除后端端口映射，仅通过前端或网关暴露。
 
 ## 服务说明
 
 ### MySQL 8.0
-- 端口：3306（生产）/ 13306（开发宿主机映射）
+- 端口：3306（生产）/ 23306（开发宿主机映射）
 - 库：`license_manager`，用户：`license_user`
 - 字符集/排序：`utf8mb4`/`utf8mb4_unicode_ci`
 - 开启慢查询日志（生产）
 
 ### 后端服务
-- 端口：18888
+- 端口：28888
 - 健康检查：`/health`
 - 配置：通过卷挂载 `config.dev.yaml` / `config.prod.yaml` 为容器内 `config.yaml`
 - 日志：标准输出 + `./logs` 挂载目录
 
 ### 前端服务
-- 端口：80（生产）/ 18080（开发映射）
-- 反向代理：`/api/` → `backend:18888`
+- 端口：80（生产）/ 28080（开发映射）
+- 反向代理：`/api/` → `backend:28888`
 - 静态资源：启用 Gzip 与长缓存
 
 ### Redis（可选，仅生产）
-- 端口：6379，AOF 持久化
+- 端口：26379（宿主机映射）/ 6379（容器内），AOF 持久化
 
 ## 常用命令
 
@@ -106,7 +106,7 @@ docker compose exec backend cat /app/backend/cmd/config.yaml
 3) 前端无法访问后端 API
 ```bash
 # 容器内连通性
-docker compose exec frontend sh -c "curl -sS http://backend:18888/health"
+docker compose exec frontend sh -c "curl -sS http://backend:28888/health"
 
 # 检查 nginx 配置
 docker compose exec frontend cat /etc/nginx/conf.d/default.conf

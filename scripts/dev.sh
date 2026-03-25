@@ -17,8 +17,8 @@ FRONTEND_PID=$!
 cd ..
 
 echo "Development servers started:"
-echo "Backend: http://localhost:8080"
-echo "Frontend: http://localhost:3000"
+echo "Backend: http://localhost:28888"
+echo "Frontend: http://localhost:23000"
 echo ""
 echo "Press Ctrl+C to stop all servers"
 

@@ -15,7 +15,7 @@ go build -o client-demo main.go
 
 ```bash
 # 使用命令行参数
-./client-demo -server http://localhost:18888
+./client-demo -server http://localhost:28888
 
 # 或使用配置文件 client_config.json
 ./client-demo
@@ -29,7 +29,7 @@ go build -o client-demo main.go
 
 | 参数 | 说明 | 默认值 |
 |------|------|--------|
-| `-server` | 服务器地址 | http://localhost:18888 |
+| `-server` | 服务器地址 | http://localhost:28888 |
 | `-version` | 软件版本 | 1.0.0 |
 | `-interval` | 心跳间隔(秒) | 300 |
 | `-activate-only` | 仅激活，不启动心跳 | false |

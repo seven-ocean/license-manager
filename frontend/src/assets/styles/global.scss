@@ -48,13 +48,13 @@ body {
 /* Theme Variables */
 :root {
   /* Element Plus 主题色自定义 */
-  --el-color-primary: #019C7C !important;
-  --el-color-primary-light-3: rgba(1, 156, 124, 0.7) !important;
-  --el-color-primary-light-5: rgba(1, 156, 124, 0.5) !important;
-  --el-color-primary-light-7: rgba(1, 156, 124, 0.3) !important;
-  --el-color-primary-light-8: rgba(1, 156, 124, 0.2) !important;
-  --el-color-primary-light-9: rgba(1, 156, 124, 0.1) !important;
-  --el-color-primary-dark-2: #0e8a71 !important;
+  --el-color-primary: #1F6DD8 !important; /* YuYoung 蓝 */
+  --el-color-primary-light-3: #4C8BE0 !important;
+  --el-color-primary-light-5: #74A5E8 !important;
+  --el-color-primary-light-7: #9EC0F0 !important;
+  --el-color-primary-light-8: #B6CFF4 !important;
+  --el-color-primary-light-9: #DCE8FA !important;
+  --el-color-primary-dark-2: #154DA0 !important;
   --el-border-radius-base: 4px;
   --el-font-size-base: 14px;
   --el-font-family: #{$font-family-primary};

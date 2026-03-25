@@ -37,7 +37,7 @@ redisCache, _ := cache.NewCache(cache.CacheConfig{
     Enabled: true,
     Redis: cache.RedisConfig{
         Host: "localhost",
-        Port: 6379,
+        Port: 26379,
         PoolSize: 10,
     },
 })
@@ -139,7 +139,7 @@ cache:
   ttl: 30m
   redis:
     host: localhost
-    port: 6379
+    port: 26379
     password: ""
     db: 0
     pool_size: 10
@@ -207,7 +207,7 @@ Redis缓存支持现已完全可用！支持内存缓存和Redis缓存无缝切�
      ttl: 30m
      redis:
        host: localhost
-       port: 6379
+       port: 26379
        password: ""
        db: 0
        pool_size: 10

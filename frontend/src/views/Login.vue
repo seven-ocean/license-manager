@@ -26,7 +26,7 @@
             <path d="M34.5498 39.9996H28.75L24.5938 32.8864L27.125 27.6246L34.5498 39.9996ZM41 39.9996H36.2705L27.9346 25.941L30.7188 20.1559L41 39.9996Z" fill="rgba(255,255,255,0.7)"/>
           </svg>
         </div>
-        <span class="brand-name">Cedar-V</span>
+        <span class="brand-name">YuYoung</span>
       </div>
 
       <!-- 左侧主文案 -->

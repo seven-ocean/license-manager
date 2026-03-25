@@ -1,13 +1,13 @@
 # 自动部署使用
 server:
   host: "0.0.0.0"
-  port: 18888
+  port: 28888
   mode: "debug"  # debug, release, test 开发环境使用debug模式
 
 database:
   driver: "mysql"
   host: "127.0.0.1"
-  port: 13306
+  port: 23306
   username: "root"
   password: "root@123"
   database: "license_manager"
@@ -31,6 +31,7 @@ auth:
   security:
     max_login_attempts: 5 # 5次失败后锁定15分钟
     lockout_duration_minutes: 15 # 15分钟后解锁
+  default_admin_password: "YYTech@2026#"
 
 log:
   level: "info" # 日志级别
@@ -109,7 +110,7 @@ cache:
   # Redis缓存配置（当type为redis时使用）
   redis:
     host: localhost
-    port: 6379
+    port: 26379
     password: ""
     db: 0
     pool_size: 10

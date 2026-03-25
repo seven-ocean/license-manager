@@ -60,7 +60,7 @@
             <NavIcon name="user" />
           </div>
           <template #dropdown>
-          <el-dropdown-menu class="user-dropdown-menu">
+            <el-dropdown-menu class="user-dropdown-menu">
             <!-- 用户信息头部 -->
             <div class="user-info-header">
               <div class="user-avatar-large">
@@ -74,6 +74,12 @@
               </div>
             </div>
             <!-- 基本信息 -->
+            <el-dropdown-item command="changePassword" class="dropdown-menu-item">
+              <svg class="menu-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M12 7V5C12 2.79086 10.2091 1 8 1C5.79086 1 4 2.79086 4 5V7H3C2.44772 7 2 7.44772 2 8V14C2 14.5523 2.44772 15 3 15H13C13.5523 15 14 14.5523 14 14V8C14 7.44772 13.5523 7 13 7H12ZM6 5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5V7H6V5Z" fill="currentColor"/>
+              </svg>
+              <span class="menu-text">修改密码</span>
+            </el-dropdown-item>
             <el-dropdown-item command="profile" class="dropdown-menu-item">
               <svg class="menu-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M8 2C6.34315 2 5 3.34315 5 5C5 6.65685 6.34315 8 8 8C9.65685 8 11 6.65685 11 5C11 3.34315 9.65685 2 8 2ZM3 5C3 2.23858 5.23858 0 8 0C10.7614 0 13 2.23858 13 5C13 7.76142 10.7614 10 8 10C5.23858 10 3 7.76142 3 5ZM2 13C2 11.3431 3.34315 10 5 10H11C12.6569 10 14 11.3431 14 13V14C14 14.5523 13.5523 15 13 15C12.4477 15 12 14.5523 12 14V13C12 12.4477 11.5523 12 11 12H5C4.44772 12 4 12.4477 4 13V14C4 14.5523 3.55228 15 3 15C2.44772 15 2 14.5523 2 14V13Z" fill="currentColor"/>
@@ -171,18 +177,39 @@
       </div>
     </div>
   </header>
+
+  <el-dialog v-model="changePwdVisible" title="修改密码" width="420px">
+    <el-form ref="changePwdFormRef" :model="changePwdForm" :rules="changePwdRules" label-width="100px">
+      <el-form-item label="原密码" prop="old_password">
+        <el-input v-model="changePwdForm.old_password" type="password" show-password autocomplete="current-password" />
+      </el-form-item>
+      <el-form-item label="新密码" prop="new_password">
+        <el-input v-model="changePwdForm.new_password" type="password" show-password autocomplete="new-password" />
+      </el-form-item>
+      <el-form-item label="确认新密码" prop="confirm_password">
+        <el-input v-model="changePwdForm.confirm_password" type="password" show-password autocomplete="new-password" />
+      </el-form-item>
+    </el-form>
+    <template #footer>
+      <div class="dialog-footer">
+        <el-button @click="changePwdVisible = false">取消</el-button>
+        <el-button type="primary" @click="onSubmitChangePwd">保存</el-button>
+      </div>
+    </template>
+  </el-dialog>
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, reactive, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
-import { ElMessageBox, ElMessage } from 'element-plus'
+import { ElMessageBox, ElMessage, FormInstance, FormRules } from 'element-plus'
 import { useAppStore } from '@/store/modules/app'
 import { useUserStore } from '@/store/modules/user'
 import NavIcon from '@/components/common/icons/NavIcon.vue'
 import { useBreadcrumb } from '@/utils/breadcrumb'
 import { changeLanguage, type SupportedLocale } from '@/utils/language'
+import { ChangePassword, type ChangePasswordRequest } from '@/api/user'
 
 // 组件属性接口定义
 interface Props {
@@ -300,6 +327,9 @@ const handleThemeClick = () => {
 // 处理用户下拉菜单命令
 const handleUserCommand = async (command: string) => {
   switch (command) {
+    case 'changePassword':
+      changePwdVisible.value = true
+      break
     case 'profile':
       // 跳转到个人信息页面
       ElMessage.info(t('userMenu.profileComingSoon'))
@@ -329,6 +359,46 @@ const handleUserCommand = async (command: string) => {
         }
       }
       break
+  }
+}
+
+// 修改密码对话框
+const changePwdVisible = ref(false)
+const changePwdFormRef = ref<FormInstance>()
+const changePwdForm = reactive({
+  old_password: '',
+  new_password: '',
+  confirm_password: ''
+})
+const changePwdRules: FormRules = {
+  old_password: [{ required: true, message: '请输入原密码', trigger: 'blur' }],
+  new_password: [{ required: true, message: '请输入新密码', trigger: 'blur' }, { min: 8, message: '至少8位', trigger: 'blur' }],
+  confirm_password: [
+    { required: true, message: '请再次输入新密码', trigger: 'blur' },
+    {
+      validator: (_r, v, cb) => {
+        if (v !== changePwdForm.new_password) cb(new Error('两次输入不一致'))
+        else cb()
+      }, trigger: 'blur'
+    }
+  ]
+}
+
+const onSubmitChangePwd = async () => {
+  await changePwdFormRef.value?.validate()
+  const payload: ChangePasswordRequest = {
+    old_password: changePwdForm.old_password,
+    new_password: changePwdForm.new_password
+  }
+  try {
+    await ChangePassword(payload)
+    ElMessage.success('修改成功')
+    changePwdVisible.value = false
+    changePwdForm.old_password = ''
+    changePwdForm.new_password = ''
+    changePwdForm.confirm_password = ''
+  } catch (e: any) {
+    ElMessage.error(e?.backendMessage || '修改失败')
   }
 }
 </script>
@@ -498,7 +568,7 @@ const handleUserCommand = async (command: string) => {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #019C7C;
+  background: var(--el-color-primary);
   display: flex;
   align-items: center;
   justify-content: center;

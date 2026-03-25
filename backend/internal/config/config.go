@@ -46,6 +46,7 @@ type AuthConfig struct {
 	JWT      JWTConfig      `mapstructure:"jwt"`
 	CuJWT    CuJWTConfig    `mapstructure:"cu_jwt"` // 客户用户JWT配置
 	Security SecurityConfig `mapstructure:"security"`
+	DefaultAdminPassword string `mapstructure:"default_admin_password"`
 }
 
 type JWTConfig struct {
@@ -192,7 +193,7 @@ func Load(configPath string) error {
 func setDefaults() {
 	// Server defaults
 	viper.SetDefault("server.host", "0.0.0.0")
-	viper.SetDefault("server.port", 18888)
+	viper.SetDefault("server.port", 28888)
 	viper.SetDefault("server.mode", "debug")
 
 	// Database defaults
@@ -214,6 +215,7 @@ func setDefaults() {
 	viper.SetDefault("auth.jwt.secret", "license-manager-default-secret-key")
 	viper.SetDefault("auth.jwt.expire_hours", 1)
 	viper.SetDefault("auth.jwt.refresh_threshold_minutes", 30)
+	viper.SetDefault("auth.default_admin_password", "")
 
 	// Cu Auth defaults (客户用户)
 	viper.SetDefault("auth.cu_jwt.secret", "license-manager-cu-default-secret-key")
@@ -261,7 +263,7 @@ func setDefaults() {
 
 	// Redis cache defaults
 	viper.SetDefault("cache.redis.host", "localhost")
-	viper.SetDefault("cache.redis.port", 6379)
+	viper.SetDefault("cache.redis.port", 26379)
 	viper.SetDefault("cache.redis.db", 0)
 	viper.SetDefault("cache.redis.pool_size", 10)
 	viper.SetDefault("cache.redis.min_idle_conns", 5)

@@ -35,9 +35,9 @@ docker-compose -f docker-compose.github.image.yml up
 
 ## 访问信息
 
-- **前端**: http://localhost:18080
-- **后端 API**: http://localhost:18888
-- **默认账号**: admin / admin@123
+- **前端**: http://localhost:28080
+- **后端 API**: http://localhost:28888
+- **默认账号**: admin / (see auth.default_admin_password in backend config)
 
 ## 常用命令
 

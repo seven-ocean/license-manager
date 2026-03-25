@@ -6,7 +6,7 @@
 
 docker run --name lm-mysql -d \
   --restart always \
-  -p 13306:3306 \
+  -p 23306:3306 \
   -e MYSQL_ROOT_PASSWORD=root@123 \
   -e MYSQL_DATABASE=license_manager \
   -v mysql-data:/var/lib/mysql \

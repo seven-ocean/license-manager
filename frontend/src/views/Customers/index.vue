@@ -7,7 +7,7 @@
  * @Description: 客户管理页面  
 -->
 <template>
-  <Layout app-name="Cedar-V" :page-title="getPageTitle()">
+  <Layout app-name="YuYoung" :page-title="getPageTitle()">
     <!-- 客户列表页面 -->
     <div v-if="!showCustomerForm && !showCustomerView" class="content-container">
       <!-- 顶部操作区域 -->

@@ -1,5 +1,5 @@
 {
-  "server_url": "http://localhost:18888",
+  "server_url": "http://localhost:28888",
   "authorization_code": "LIC-B597-EFr0tbfAooQF-uUAA",
   "software_version": "1.0.0",
   "heartbeat_interval": 300,

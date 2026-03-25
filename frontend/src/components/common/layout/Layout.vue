@@ -53,7 +53,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  appName: 'Cedar-V',
+  appName: 'YuYoung',
   pageTitle: ''
 })
 

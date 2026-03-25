@@ -110,7 +110,7 @@ var (
 
 func main() {
 	var (
-		serverURL       = flag.String("server", "http://localhost:18888", "服务器地址 (例如: http://localhost:18888)")
+		serverURL       = flag.String("server", "http://localhost:28888", "服务器地址 (例如: http://localhost:28888)")
 		softwareVersion = flag.String("version", "1.0.0", "软件版本")
 		interval        = flag.Int("interval", 300, "心跳间隔(秒)")
 		activateOnly    = flag.Bool("activate-only", false, "仅执行激活，不启动心跳")

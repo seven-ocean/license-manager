@@ -153,6 +153,59 @@ func (h *AuthHandler) RefreshToken(c *gin.Context) {
 	})
 }
 
+// ChangePassword 修改密码（管理员）
+// @Summary 修改当前用户密码
+// @Tags 认证
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param request body models.ChangePasswordRequest true "修改密码请求"
+// @Success 200 {object} models.APIResponse "修改成功"
+// @Failure 400 {object} models.ErrorResponse "请求参数无效"
+// @Failure 401 {object} models.ErrorResponse "未认证"
+// @Failure 500 {object} models.ErrorResponse "服务器内部错误"
+// @Router /api/v1/auth/password [put]
+func (h *AuthHandler) ChangePassword(c *gin.Context) {
+	var req models.ChangePasswordRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		lang := middleware.GetLanguage(c)
+		status, errCode, message := i18n.NewI18nErrorResponse("900001", lang)
+		c.JSON(status, models.ErrorResponse{
+			Code:      errCode,
+			Message:   message,
+			Timestamp: getCurrentTimestamp(),
+		})
+		return
+	}
+	userID, _ := c.Get("user_id")
+	if userID == nil || userID.(string) == "" {
+		lang := middleware.GetLanguage(c)
+		status, errCode, message := i18n.NewI18nErrorResponse("100004", lang)
+		c.JSON(status, models.ErrorResponse{
+			Code:      errCode,
+			Message:   message,
+			Timestamp: getCurrentTimestamp(),
+		})
+		return
+	}
+	if err := h.authService.ChangePassword(c.Request.Context(), userID.(string), &req); err != nil {
+		lang := middleware.GetLanguage(c)
+		status, errCode, message := i18n.NewI18nErrorResponse("900004", lang, err.Error())
+		c.JSON(status, models.ErrorResponse{
+			Code:      errCode,
+			Message:   message,
+			Timestamp: getCurrentTimestamp(),
+		})
+		return
+	}
+	lang := middleware.GetLanguage(c)
+	successMessage := i18n.GetErrorMessage("000000", lang)
+	c.JSON(http.StatusOK, models.APIResponse{
+		Code:    "000000",
+		Message: successMessage,
+	})
+}
+
 // getCurrentTimestamp 获取当前时间戳
 func getCurrentTimestamp() string {
 	return time.Now().Format(time.RFC3339)

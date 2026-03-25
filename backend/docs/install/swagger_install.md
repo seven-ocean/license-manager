@@ -24,8 +24,8 @@ swag init -g cmd/main.go -o ./docs/swagger
 ## 访问Swagger UI
 
 启动服务后，访问：
-- Swagger UI: http://localhost:18888/swagger/index.html
-- Swagger JSON: http://localhost:18888/swagger/doc.json
+- Swagger UI: http://localhost:28888/swagger/index.html
+- Swagger JSON: http://localhost:28888/swagger/doc.json
 
 ## 常用命令
 

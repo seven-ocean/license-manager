@@ -123,3 +123,33 @@ func (s *authService) ValidateToken(token string) error {
 	_, err := utils.ValidateToken(token)
 	return err
 }
+
+// ChangePassword 管理端修改密码
+func (s *authService) ChangePassword(ctx context.Context, userID string, req *models.ChangePasswordRequest) error {
+	lang := pkgcontext.GetLanguageFromContext(ctx)
+	if req == nil {
+		return i18n.NewI18nError("900001", lang)
+	}
+	// 获取用户
+	user, err := s.userRepo.GetUserByID(ctx, userID)
+	if err != nil {
+		if err == gorm.ErrRecordNotFound {
+			return i18n.NewI18nError("100005", lang, "用户不存在")
+		}
+		return i18n.NewI18nError("900004", lang, err.Error())
+	}
+	// 校验原密码
+	if !utils.CheckPasswordHash(req.OldPassword, user.PasswordHash) {
+		return i18n.NewI18nError("100003", lang, "原密码不正确")
+	}
+	// 生成新密码哈希
+	hash, err := utils.HashPassword(req.NewPassword)
+	if err != nil {
+		return i18n.NewI18nError("900004", lang, err.Error())
+	}
+	user.PasswordHash = hash
+	if err := s.userRepo.UpdateUser(ctx, user); err != nil {
+		return i18n.NewI18nError("900004", lang, err.Error())
+	}
+	return nil
+}

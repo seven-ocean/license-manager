@@ -10,6 +10,7 @@ type AuthService interface {
 	Login(ctx context.Context, req *models.LoginRequest, clientIP string) (*models.LoginData, error)
 	RefreshToken(token string) (string, error)
 	ValidateToken(token string) error
+	ChangePassword(ctx context.Context, userID string, req *models.ChangePasswordRequest) error
 }
 
 // SystemService 系统服务接口

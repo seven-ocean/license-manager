@@ -26,7 +26,7 @@ cd license-manager
 docker compose up -d --build
 ```
 
-访问: http://localhost:18080
+访问: http://localhost:28080
 
 ## 🔮 下一步计划
 

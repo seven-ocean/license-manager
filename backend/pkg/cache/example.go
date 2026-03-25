@@ -95,7 +95,7 @@ func ExampleRedisUsage() {
 		Enabled: true,
 		Redis: RedisConfig{
 			Host:            "localhost",
-			Port:            6379,
+				Port:            26379,
 			Password:        "",
 			DB:              0,
 			PoolSize:        10,

@@ -163,6 +163,7 @@ func SetupRouter() *gin.Engine {
 			// 认证相关
 			auth.POST("/v1/logout", authHandler.Logout)
 			auth.POST("/v1/auth/refresh", authHandler.RefreshToken)
+			auth.PUT("/v1/auth/password", authHandler.ChangePassword)
 
 			// 客户管理
 			auth.GET("/customers", customerHandler.GetCustomerList)

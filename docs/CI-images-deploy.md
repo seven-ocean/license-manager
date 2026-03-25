@@ -22,9 +22,9 @@ BACKEND_IMAGE=ghcr.io/<owner>/<repo>-backend:latest
 FRONTEND_IMAGE=ghcr.io/<owner>/<repo>-frontend:latest
 
 # 可选：本地端口映射（如用于开发环境）
-MYSQL_PORT=13306
-BACKEND_PORT=18888
-FRONTEND_PORT=18080
+MYSQL_PORT=23306
+BACKEND_PORT=28888
+FRONTEND_PORT=28080
 ```
 
 2) 启动：
@@ -34,7 +34,7 @@ docker compose -f docker-compose.prod.yml up -d
 
 3) 验证：
 ```bash
-curl http://localhost:18888/health
+curl http://localhost:28888/health
 ```
 
 说明：

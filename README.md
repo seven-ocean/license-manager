@@ -36,7 +36,7 @@
 访问地址：[lm.cedar-v.com](http://lm.cedar-v.com)  
 **登录凭证：**  
 - 用户名：`admin`  
-- 密码：`admin@123`
+- 密码：见 `backend/configs/config.*.yaml` 的 `auth.default_admin_password`
 
 > 💡 这是一个当前功能的演示环境，您可以体验已开发的核心特性。
 
@@ -181,7 +181,7 @@ docker compose up -d --build
 docker compose -f docker-compose.prod.yml up -d
 
 # 验证后端健康
-curl http://localhost:18888/health
+curl http://localhost:28888/health
 ```
 
 完整部署说明（反向代理、健康检查、配置挂载等）请参见 `README-Docker.md`。

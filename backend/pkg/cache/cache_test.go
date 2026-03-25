@@ -169,7 +169,7 @@ func TestRedisCacheUnavailable(t *testing.T) {
 		Enabled: true,
 		Redis: RedisConfig{
 			Host: "localhost",
-			Port: 6379,
+			Port: 26379,
 		},
 	}
 

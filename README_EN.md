@@ -29,14 +29,14 @@ License Manager is a comprehensive software commercialization solution that inte
 ✨It enables **any programming language** and **any type of software product** to **quickly integrate licensing capabilities** via standardized **HTTP APIs** and **cross-platform client SDKs**.
 
 ## Demo Environment
-  <a href="https://lm.cedar-v.com:18080">
+  <a href="https://lm.cedar-v.com:28080">
     <img src="https://img.shields.io/badge/Demo-Online-success?logo=googlechrome" alt="Live Demo">
   </a>
 
-Access URL: [lm.cedar-v.com:18080](http://lm.cedar-v.com:18080)  
+Access URL: [lm.cedar-v.com:28080](http://lm.cedar-v.com:28080)  
 **Login Credentials:**  
 - Username: `admin`  
-- Password: `admin@123`
+- Password: see `auth.default_admin_password` in `backend/configs/config.*.yaml`
 
 > 💡 This is a demo environment showcasing our current features. You can experience the implemented core functionalities while we continue active development with more features coming soon.
 
@@ -183,14 +183,14 @@ docker compose up -d --build
 docker compose -f docker-compose.prod.yml up -d
 
 # Verify backend health
-curl http://localhost:18888/health
+curl http://localhost:28888/health
 ```
 
 Notes
 - Backend config is mounted by Compose:
   - Dev: `backend/configs/config.dev.yaml` → `/app/backend/cmd/config.yaml`
   - Prod: `backend/configs/config.prod.yaml` → `/app/backend/cmd/config.yaml`
-- Frontend Nginx proxies `/api/` to `backend:18888` inside the Docker network.
+- Frontend Nginx proxies `/api/` to `backend:28888` inside the Docker network.
 - Health checks use `curl`; the backend image includes `curl`.
 - For full details (reverse proxy, health checks, mounts, troubleshooting), see `README-Docker.md`.
 

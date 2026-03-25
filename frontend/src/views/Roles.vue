@@ -7,7 +7,7 @@
  * @Description: 角色权限页面
 -->
 <template>
-  <Layout app-name="Cedar-V" :page-title="t('pages.roles.title')">
+  <Layout app-name="YuYoung" :page-title="t('pages.roles.title')">
     <!-- 页面内容 -->
     <div class="content-container">
       <h1>{{ t('pages.roles.welcome') }}</h1>

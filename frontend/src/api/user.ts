@@ -21,3 +21,12 @@ export interface LoginResponse {
 export function Login(data: LoginRequest): Promise<LoginResponse> {
   return Axios.post('/api/v1/login', data)
 }
+
+export interface ChangePasswordRequest {
+  old_password: string;
+  new_password: string;
+}
+
+export function ChangePassword(data: ChangePasswordRequest): Promise<any> {
+  return Axios.put('/api/v1/auth/password', data)
+}

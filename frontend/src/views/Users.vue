@@ -7,7 +7,7 @@
  * @Description: 系统用户页面
 -->
 <template>
-  <Layout app-name="Cedar-V" :page-title="t('pages.users.title')">
+  <Layout app-name="YuYoung" :page-title="t('pages.users.title')">
     <!-- 页面内容 -->
     <div class="content-container">
       <h1>{{ t('pages.users.welcome') }}</h1>

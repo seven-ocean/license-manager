@@ -122,7 +122,15 @@ func initDefaultAdminUser() error {
 
 	if result.Error != nil {
 		// 用户不存在，创建默认管理员
-		passwordHash, err := utils.HashPassword("admin@123")
+		cfg := config.GetConfig()
+		pwd := ""
+		if cfg != nil {
+			pwd = cfg.Auth.DefaultAdminPassword
+		}
+		if pwd == "" {
+			pwd = "YYTech@2026#"
+		}
+		passwordHash, err := utils.HashPassword(pwd)
 		if err != nil {
 			return fmt.Errorf("failed to hash password: %w", err)
 		}
@@ -140,7 +148,7 @@ func initDefaultAdminUser() error {
 			return fmt.Errorf("failed to create default admin user: %w", err)
 		}
 
-		log.Println("Created default admin user: admin / admin@123")
+		log.Println("Created default admin user: admin")
 	} else {
 		log.Println("Default admin user already exists")
 	}

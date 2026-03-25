@@ -7,7 +7,7 @@
  * @Description: 授权管理公共路由容器
 -->
 <template>
-  <Layout app-name="Cedar-V" :page-title="t('pages.licenses.title')">
+  <Layout app-name="YuYoung" :page-title="t('pages.licenses.title')">
     <router-view />
   </Layout>
 </template>
