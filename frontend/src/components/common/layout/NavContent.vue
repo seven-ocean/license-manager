@@ -648,7 +648,7 @@ const onSubmitChangePwd = async () => {
 
 /* 退出菜单项特殊样式 */
 :deep(.logout-item:hover) {
-  background: rgba(0, 194, 124, 0.12);
+  background: rgba(31, 109, 216, 0.12);
 }
 
 :deep(.logout-item:last-child) {
@@ -728,7 +728,7 @@ const onSubmitChangePwd = async () => {
   right: -1px;
   width: 22px;
   height: 16px;
-  background: #00C27C;
+  background: var(--el-color-primary);
   color: white;
   font-size: 10px;
   font-weight: 700;
@@ -890,7 +890,7 @@ const onSubmitChangePwd = async () => {
 
 /* 侧边栏切换按钮暗模式 */
 [data-theme="dark"] .sidebar-toggle-btn:hover {
-  background: rgba(16, 185, 129, 0.15) !important;
+  background: rgba(31, 109, 216, 0.15) !important;
 }
 
 /* 面包屑导航暗模式 */
@@ -904,11 +904,11 @@ const onSubmitChangePwd = async () => {
 }
 
 [data-theme="dark"] .breadcrumb-link {
-  color: #10b981 !important;
+  color: var(--el-color-primary) !important;
 }
 
 [data-theme="dark"] .breadcrumb-link:hover {
-  color: #059669 !important;
+  color: var(--el-color-primary-dark-2) !important;
 }
 
 [data-theme="dark"] .breadcrumb-current {
@@ -934,12 +934,12 @@ const onSubmitChangePwd = async () => {
 }
 
 [data-theme="dark"] .action-btn:hover {
-  background: rgba(16, 185, 129, 0.15) !important;
+  background: rgba(31, 109, 216, 0.15) !important;
 }
 
 /* 通知徽章暗模式 */
 [data-theme="dark"] .notification-badge {
-  background: #10b981 !important;
+  background: var(--el-color-primary) !important;
   color: #ffffff !important;
   border-color: rgba(31, 41, 53, 1) !important;
 }
@@ -975,7 +975,7 @@ const onSubmitChangePwd = async () => {
 }
 
 [data-theme="dark"] .avatar-icon {
-  background: #10b981 !important;
+  background: var(--el-color-primary) !important;
 }
 
 [data-theme="dark"] .user-name {
@@ -1003,6 +1003,6 @@ const onSubmitChangePwd = async () => {
 }
 
 [data-theme="dark"] :deep(.logout-item:hover) {
-  background: rgba(16, 185, 129, 0.15) !important;
+  background: rgba(31, 109, 216, 0.15) !important;
 }
 </style>

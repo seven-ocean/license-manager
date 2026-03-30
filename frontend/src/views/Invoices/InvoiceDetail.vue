@@ -422,7 +422,7 @@ const downloadFile = (e:string)=>{
   padding: 0;
 
   .el-dialog__header {
-    background-color: #019C7C;
+    background-color: var(--el-color-primary);
     margin: 0;
     padding: 16px 24px;
     
@@ -563,11 +563,11 @@ const downloadFile = (e:string)=>{
       :deep(.el-upload-dragger) {
         border: 1px dashed #D9D9D9;
         padding: 30px;
-        &:hover { border-color: #019C7C; }
+        &:hover { border-color: var(--el-color-primary); }
       }
 
       .upload-link {
-        color: #019C7C;
+        color: var(--el-color-primary);
         text-decoration: underline;
       }
 
@@ -592,10 +592,10 @@ const downloadFile = (e:string)=>{
   gap: 16px;
 
   .btn-submit {
-    background-color: #019C7C;
-    border-color: #019C7C;
+    background-color: var(--el-color-primary);
+    border-color: var(--el-color-primary);
     padding: 8px 32px;
-    &:hover { background-color: #017c63; border-color: #017c63; }
+    &:hover { background-color: #154DA0; border-color: #154DA0; }
   }
 
   .el-button {

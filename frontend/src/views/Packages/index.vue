@@ -212,14 +212,14 @@ const handleUpdate = async (updatedData: any) => {
 }
 
 .refresh-btn {
-  border-color: #E6F7F3;
-  background-color: #E6F7F3 !important;
-  color: #00a870 !important;
+  border-color: #DCE8FA;
+  background-color: #DCE8FA !important;
+  color: var(--el-color-primary) !important;
   transition: all 0.3s;
   
   &:hover {
-    border-color: #00a870;
-    background-color: #00a870 !important;
+    border-color: var(--el-color-primary);
+    background-color: var(--el-color-primary) !important;
     color: #fff !important;
     transform: rotate(180deg);
   }
@@ -228,7 +228,7 @@ const handleUpdate = async (updatedData: any) => {
 .title-bar {
   width: 4px;
   height: 18px;
-  background: #00a870;
+  background: var(--el-color-primary);
   border-radius: 2px;
 }
 
@@ -245,8 +245,8 @@ const handleUpdate = async (updatedData: any) => {
 
 .btn-edit {
   border: none;
-  background: #e6f7f3 !important;
-  color: #00a870 !important;
+  background: #DCE8FA !important;
+  color: var(--el-color-primary) !important;
   padding: 4px 12px;
   height: 28px;
   font-size: 12px;

@@ -21,10 +21,7 @@
       <!-- 品牌标识 -->
       <div class="brand-header">
         <div class="brand-logo">
-          <svg width="48" height="48" viewBox="0 0 54 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M26.3125 11.4814L22.25 19.5947V22.7148L27.1191 13.0576L29.7393 18.1777L18.7988 40H0L13.5938 22.8037H14L13.8125 23.1201L7.46875 33.541H17.8438V16.9111L7.1875 25.6475L18.0312 10.1406L11.625 14.4463V14.2588L20.4375 0L26.3125 11.4814Z" fill="#ffffff"/>
-            <path d="M34.5498 39.9996H28.75L24.5938 32.8864L27.125 27.6246L34.5498 39.9996ZM41 39.9996H36.2705L27.9346 25.941L30.7188 20.1559L41 39.9996Z" fill="rgba(255,255,255,0.7)"/>
-          </svg>
+          <img class="brand-logo-img" src="/logo-blue.png" alt="YuYoung" />
         </div>
         <span class="brand-name">YuYoung</span>
       </div>
@@ -432,9 +429,9 @@ $phi-inv: 38.2%;
 
   :global([data-theme='dark']) & {
     background: 
-      radial-gradient(ellipse at 25% 25%, rgba(0, 255, 200, 0.12) 0%, transparent 45%),
-      radial-gradient(ellipse at 75% 75%, rgba(0, 200, 255, 0.08) 0%, transparent 40%),
-      radial-gradient(ellipse at 50% 50%, rgba(0, 255, 200, 0.05) 0%, transparent 50%);
+      radial-gradient(ellipse at 25% 25%, rgba(31, 109, 216, 0.12) 0%, transparent 45%),
+      radial-gradient(ellipse at 75% 75%, rgba(31, 109, 216, 0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 50%, rgba(31, 109, 216, 0.05) 0%, transparent 50%);
     animation: gradientMoveDark 18s ease-in-out infinite;
   }
 }
@@ -465,8 +462,8 @@ $phi-inv: 38.2%;
 
   :global([data-theme='dark']) & {
     background: 
-      linear-gradient(90deg, rgba(0, 255, 200, 0.03) 1px, transparent 1px),
-      linear-gradient(rgba(0, 255, 200, 0.03) 1px, transparent 1px);
+      linear-gradient(90deg, rgba(31, 109, 216, 0.03) 1px, transparent 1px),
+      linear-gradient(rgba(31, 109, 216, 0.03) 1px, transparent 1px);
   }
 }
 
@@ -503,8 +500,8 @@ $phi-inv: 38.2%;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
 
   :global([data-theme='dark']) & {
-    background: linear-gradient(135deg, rgba(0, 255, 200, 0.6), rgba(0, 200, 150, 0.3));
-    box-shadow: 0 0 16px rgba(0, 255, 200, 0.5);
+    background: linear-gradient(135deg, rgba(31, 109, 216, 0.6), rgba(31, 109, 216, 0.3));
+    box-shadow: 0 0 16px rgba(31, 109, 216, 0.5);
   }
 }
 
@@ -532,7 +529,7 @@ $phi-inv: 38.2%;
   animation-delay: 0s;
 
   :global([data-theme='dark']) & {
-    background: radial-gradient(circle, rgba(0, 255, 200, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(31, 109, 216, 0.15) 0%, transparent 70%);
   }
 }
 
@@ -545,7 +542,7 @@ $phi-inv: 38.2%;
   animation-delay: -8s;
 
   :global([data-theme='dark']) & {
-    background: radial-gradient(circle, rgba(0, 200, 255, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(31, 109, 216, 0.12) 0%, transparent 70%);
   }
 }
 
@@ -622,8 +619,8 @@ $phi-inv: 38.2%;
 
   :global([data-theme='dark']) & {
     background-image: 
-      linear-gradient(rgba(0, 200, 150, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 200, 150, 0.02) 1px, transparent 1px);
+      linear-gradient(rgba(31, 109, 216, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31, 109, 216, 0.02) 1px, transparent 1px);
   }
 }
 
@@ -634,6 +631,13 @@ $phi-inv: 38.2%;
   left: 48px;
   display: flex;
   z-index: 10;
+}
+
+.brand-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
 }
 
 .brand-name {
@@ -753,7 +757,7 @@ $phi-inv: 38.2%;
   }
 
   &:hover {
-    border-color: #019c7c;
+    border-color: var(--el-color-primary);
   }
 }
 
@@ -838,7 +842,7 @@ $phi-inv: 38.2%;
   }
 
   &:hover {
-    box-shadow: 0 0 0 1px #019c7c inset;
+    box-shadow: 0 0 0 1px var(--el-color-primary) inset;
 
     :global([data-theme='dark']) & {
       box-shadow: 0 0 0 1px #4b5563 inset;
@@ -850,7 +854,7 @@ $phi-inv: 38.2%;
 .login-input {
   &.is-field-valid {
     :deep(.el-input__wrapper) {
-      box-shadow: 0 0 0 1px #019c7c inset !important;
+      box-shadow: 0 0 0 1px var(--el-color-primary) inset !important;
     }
   }
 }
@@ -878,7 +882,7 @@ $phi-inv: 38.2%;
 }
 
 .login-input :deep(.el-input__prefix) {
-  color: #019c7c;
+  color: var(--el-color-primary);
   margin-right: 0;
   padding: 0;
   width: 48px;
@@ -954,7 +958,7 @@ $phi-inv: 38.2%;
   cursor: pointer;
   
   &:hover {
-    color: #019c7c;
+    color: var(--el-color-primary);
   }
 }
 
@@ -964,23 +968,23 @@ $phi-inv: 38.2%;
   font-size: 16px;
   font-weight: 500;
   border-radius: 8px;
-  background: #019c7c;
+  background: var(--el-color-primary);
   border: none;
   margin-top: 32px;
   transition: all 0.25s ease;
   color: #ffffff;
 
   :global([data-theme='dark']) & {
-    background: #019c7c;
+    background: var(--el-color-primary);
     color: #ffffff;
   }
 
   &:hover {
-    background: #018a6d;
+    background: #154DA0;
     transform: translateY(-1px);
 
     :global([data-theme='dark']) & {
-      background: #018a6d;
+      background: #154DA0;
     }
   }
 
@@ -1007,10 +1011,10 @@ $phi-inv: 38.2%;
   }
 
   &:hover {
-    color: #019c7c;
+    color: var(--el-color-primary);
 
     :global([data-theme='dark']) & {
-      color: #019c7c;
+      color: var(--el-color-primary);
     }
   }
 }
@@ -1037,25 +1041,25 @@ $phi-inv: 38.2%;
   }
 
   &:hover {
-    border-color: #019c7c;
+    border-color: var(--el-color-primary);
   }
 }
 
 .login-form :deep(.el-checkbox__input.is-checked .el-checkbox__inner) {
-  background-color: #019c7c;
-  border-color: #019c7c;
+  background-color: var(--el-color-primary);
+  border-color: var(--el-color-primary);
 
   :global([data-theme='dark']) & {
-    background-color: #019c7c;
-    border-color: #019c7c;
+    background-color: var(--el-color-primary);
+    border-color: var(--el-color-primary);
   }
 }
 
 .login-form :deep(.el-checkbox__input.is-checked + .el-checkbox__label) {
-  color: #019c7c;
+  color: var(--el-color-primary);
 
   :global([data-theme='dark']) & {
-    color: #019c7c;
+    color: var(--el-color-primary);
   }
 }
 
@@ -1111,11 +1115,11 @@ $phi-inv: 38.2%;
   }
 
   &.selected {
-    color: #019c7c !important;
+    color: var(--el-color-primary) !important;
     font-weight: 500;
 
     :global([data-theme='dark']) & {
-      color: #00c896 !important;
+      color: var(--el-color-primary) !important;
     }
   }
 }

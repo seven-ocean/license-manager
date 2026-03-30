@@ -263,7 +263,7 @@ onMounted(() => {
   gap: 2.08vw; /* 卡片之间的间距 40px/1920 = 2.08vw */
   margin-bottom: 1.25vw; /* 24px/1920 = 1.25vw */
   padding: 1.25vw; /* 24px/1920 = 1.25vw */
-  background: linear-gradient(135deg, #019C7C 0%, #1db584 100%);
+  background: linear-gradient(135deg, #1F6DD8 0%, #4C8BE0 100%);
   border-radius: 0.42vw; /* 8px/1920 = 0.42vw */
   position: relative;
   overflow: hidden; /* 确保背景图片不溢出 */
@@ -705,8 +705,8 @@ onMounted(() => {
 
 /* 统计卡片区域暗模式优化 */
 [data-theme='dark'] .stats-section {
-  background: linear-gradient(135deg, #019C7C 0%, #10b981 100%) !important;
-  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15) !important;
+  background: linear-gradient(135deg, #1F6DD8 0%, #154DA0 100%) !important;
+  box-shadow: 0 4px 20px rgba(31, 109, 216, 0.15) !important;
 
   // 暗色模式下的背景图片
   &::after {

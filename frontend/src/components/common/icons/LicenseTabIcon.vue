@@ -61,6 +61,6 @@ const iconClass = computed(() => ({
 }
 
 .license-tab-icon--active :deep(path) {
-  fill: #019C7C;
+  fill: var(--el-color-primary);
 }
 </style>

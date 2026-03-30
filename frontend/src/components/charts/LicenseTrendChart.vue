@@ -215,7 +215,7 @@ const chartOption = computed(() => {
         color: appStore.isDark ? 'rgba(255, 255, 255, 1)' : '#303133',
         fontSize: 12
       },
-      extraCssText: 'box-shadow: 0px 4px 12px 0px rgba(59, 210, 180, 0.2); backdrop-filter: blur(4px);',
+      extraCssText: 'box-shadow: 0px 4px 12px 0px rgba(31, 109, 216, 0.2); backdrop-filter: blur(4px);',
       appendToBody: true, // mount tooltip DOM on <body> to escape overflow:hidden on card
       formatter: (params: any) => {
         const data = params[0]
@@ -228,12 +228,12 @@ const chartOption = computed(() => {
         data: values,
         smooth: true,
         lineStyle: {
-          color: '#00C27C',
+          color: '#1F6DD8',
           width: 2
         },
         itemStyle: {
-          color: '#00C27C',
-          borderColor: '#00C27C',
+          color: '#1F6DD8',
+          borderColor: '#1F6DD8',
           borderWidth: 3
         },
         symbol: 'circle',
@@ -241,7 +241,7 @@ const chartOption = computed(() => {
         emphasis: {
           itemStyle: {
             shadowBlur: 12,
-            shadowColor: 'rgba(59, 210, 180, 1)'
+            shadowColor: 'rgba(31, 109, 216, 1)'
           }
         },
         areaStyle: {
@@ -254,11 +254,11 @@ const chartOption = computed(() => {
             colorStops: [
               {
                 offset: 0,
-                color: 'rgba(90, 216, 166, 0.6)'
+                color: 'rgba(31, 109, 216, 0.6)'
               },
               {
                 offset: 1,
-                color: 'rgba(90, 216, 166, 0.08)'
+                color: 'rgba(31, 109, 216, 0.08)'
               }
             ]
           }
@@ -439,12 +439,12 @@ onMounted(() => {
   }
   
   :deep(.el-button--primary) {
-    background: #00C27C;
-    border-color: #00C27C;
+    background: var(--el-color-primary);
+    border-color: var(--el-color-primary);
     
     &:hover {
-      background: #019C7C;
-      border-color: #019C7C;
+      background: #154DA0;
+      border-color: #154DA0;
     }
   }
   
@@ -480,7 +480,7 @@ onMounted(() => {
       }
       
       &:focus {
-        border-color: #019C7C;
+        border-color: var(--el-color-primary);
         outline: none;
       }
       
@@ -580,8 +580,8 @@ onMounted(() => {
       
       // 主要按钮样式
       :deep(.el-button--primary) {
-        background: #019C7C;
-        border-color: #019C7C;
+        background: var(--el-color-primary);
+        border-color: var(--el-color-primary);
         color: #fff;
       }
       
@@ -672,14 +672,14 @@ onMounted(() => {
 }
 
 [data-theme="dark"] .time-selector :deep(.el-button--primary) {
-  background: #10b981 !important;
-  border-color: #10b981 !important;
+  background: var(--el-color-primary) !important;
+  border-color: var(--el-color-primary) !important;
   color: #ffffff !important;
 }
 
 [data-theme="dark"] .time-selector :deep(.el-button--primary:hover) {
-  background: #059669 !important;
-  border-color: #059669 !important;
+  background: var(--el-color-primary-dark-2) !important;
+  border-color: var(--el-color-primary-dark-2) !important;
 }
 
 /* 日期显示器暗模式 */
@@ -694,7 +694,7 @@ onMounted(() => {
 }
 
 [data-theme="dark"] .date-display:focus {
-  border-color: #10b981 !important;
+  border-color: var(--el-color-primary) !important;
 }
 
 [data-theme="dark"] .date-display .date-icon {

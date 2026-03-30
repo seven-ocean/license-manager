@@ -71,6 +71,6 @@ const iconClass = computed(() => ({
 }
 
 .sidebar-icon--active :deep(path) {
-  fill: #019C7C;
+  fill: var(--el-color-primary);
 }
 </style>

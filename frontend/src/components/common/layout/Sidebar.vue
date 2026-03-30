@@ -440,17 +440,17 @@ const handleNavClick = (item: NavItem, event: Event) => {
 }
 
 [data-theme="dark"] .nav-link:hover {
-  background: rgba(16, 185, 129, 0.15) !important;
-  color: #10b981 !important;
+  background: rgba(31, 109, 216, 0.15) !important;
+  color: var(--el-color-primary) !important;
 }
 
 [data-theme="dark"] .nav-link--active {
-  background: rgba(16, 185, 129, 0.2) !important;
-  color: #10b981 !important;
+  background: rgba(31, 109, 216, 0.2) !important;
+  color: var(--el-color-primary) !important;
 }
 
 [data-theme="dark"] .nav-link--active .nav-text {
-  color: #10b981 !important;
+  color: var(--el-color-primary) !important;
 }
 
 /* 导航图标暗模式 */
@@ -460,7 +460,7 @@ const handleNavClick = (item: NavItem, event: Event) => {
 
 [data-theme="dark"] .nav-link:hover .nav-icon,
 [data-theme="dark"] .nav-link--active .nav-icon {
-  color: #10b981 !important;
+  color: var(--el-color-primary) !important;
 }
 
 /* 子菜单暗模式 */
@@ -469,13 +469,13 @@ const handleNavClick = (item: NavItem, event: Event) => {
 }
 
 [data-theme="dark"] .nav-sublink:hover {
-  background: rgba(16, 185, 129, 0.15) !important;
-  color: #10b981 !important;
+  background: rgba(31, 109, 216, 0.15) !important;
+  color: var(--el-color-primary) !important;
 }
 
 [data-theme="dark"] .nav-sublink--active {
-  background: rgba(16, 185, 129, 0.15) !important;
-  color: #10b981 !important;
+  background: rgba(31, 109, 216, 0.15) !important;
+  color: var(--el-color-primary) !important;
 }
 
 /* 底部区域暗模式 */

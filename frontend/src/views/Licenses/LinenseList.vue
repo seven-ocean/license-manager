@@ -747,7 +747,7 @@ onMounted(async () => {
   --el-pagination-bg-color: var(--app-content-bg);
   --el-pagination-text-color: var(--app-text-primary);
   --el-pagination-border-color: var(--app-border-color);
-  --el-pagination-hover-color: #019c7c;
+  --el-pagination-hover-color: var(--el-color-primary);
   
 }
 :deep(.el-pagination .btn-prev), :deep(.el-pagination .btn-next), :deep(.el-pagination .el-pager li) {
@@ -815,10 +815,10 @@ onMounted(async () => {
   color: var(--app-text-primary);
 }
 :deep(.el-table__body tr:hover > td) {
-  background: #e3f7f1 !important;
+  background: #DCE8FA !important;
   transition: background 0.2s;
 }
 [data-theme='dark'] :deep(.el-table__body tr:hover > td) {
-  background: rgba(16, 185, 129, 0.15) !important;
+  background: rgba(31, 109, 216, 0.15) !important;
 }
 </style>

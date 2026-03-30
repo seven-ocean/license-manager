@@ -204,8 +204,8 @@ watch(() => props.modelValue, (newVal) => {
   
   &:focus {
     outline: none;
-    border-color: #019C7C;
-    box-shadow: 0 0 0 2px rgba(1, 156, 124, 0.1);
+    border-color: var(--el-color-primary);
+    box-shadow: 0 0 0 2px rgba(31, 109, 216, 0.1);
   }
   
   &:hover {
@@ -237,13 +237,13 @@ watch(() => props.modelValue, (newVal) => {
   transition: all 0.2s ease;
   
   &:hover {
-    border-color: #019C7C;
-    color: #019C7C;
+    border-color: var(--el-color-primary);
+    color: var(--el-color-primary);
   }
   
   &.active {
-    background: #019C7C;
-    border-color: #019C7C;
+    background: var(--el-color-primary);
+    border-color: var(--el-color-primary);
     color: #fff;
   }
   

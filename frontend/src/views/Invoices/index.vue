@@ -123,7 +123,7 @@
           </el-table-column>
           <el-table-column :label="t('invoices.table.operation')" width="200" fixed="right">
             <template #default="{ row }">
-              <el-button link type="primary" style="color: #019c7c" @click="handleView(row)">{{
+              <el-button link type="primary" style="color: var(--el-color-primary)" @click="handleView(row)">{{
                 t('invoices.actions.view')
               }}</el-button>
               <template v-if="row.status === 'pending'">
@@ -606,7 +606,7 @@ const handleCurrentChange = (val: number) => {
   .title-line {
     width: 4px;
     height: 16px;
-    background: #019c7c;
+    background: var(--el-color-primary);
     margin-right: 12px;
   }
 
@@ -667,7 +667,7 @@ const handleCurrentChange = (val: number) => {
 
   :deep(.el-pagination) {
     .el-pager li.is-active {
-      background-color: #019c7c;
+      background-color: var(--el-color-primary);
       color: #fff;
     }
   }

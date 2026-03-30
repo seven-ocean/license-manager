@@ -279,12 +279,12 @@ const handleSave = async () => {
   }
 
   .btn-save {
-    background-color: #00a870 !important;
-    border-color: #00a870 !important;
+    background-color: var(--el-color-primary) !important;
+    border-color: var(--el-color-primary) !important;
     color: #fff !important;
     &:hover {
-      background-color: #008f5d !important;
-      border-color: #008f5d !important;
+      background-color: #154DA0 !important;
+      border-color: #154DA0 !important;
     }
   }
 }

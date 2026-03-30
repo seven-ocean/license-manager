@@ -382,9 +382,9 @@ const getStatusType = (changeType: string) => {
         border-radius: 4px;
 
         &.el-tag--success {
-          background: rgba(0, 194, 124, 0.08);
+          background: rgba(31, 109, 216, 0.08);
           border-color: transparent;
-          color: #019C7C;
+          color: var(--el-color-primary);
         }
 
         &.el-tag--danger {

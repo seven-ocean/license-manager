@@ -619,9 +619,9 @@ const submitAddLicense = async () => {
       border-radius: 4px;
 
       &.el-tag--success {
-        background: rgba(0, 194, 124, 0.08);
+        background: rgba(31, 109, 216, 0.08);
         border-color: transparent;
-        color: #019C7C;
+        color: var(--el-color-primary);
       }
 
       &.el-tag--danger {
@@ -762,7 +762,7 @@ const submitAddLicense = async () => {
 
   .download-license-btn {
     min-width: 148px;
-    background: #00C27C;
+    background: var(--el-color-primary);
     border: none;
     color: #FFFFFF;
     
@@ -772,7 +772,7 @@ const submitAddLicense = async () => {
     border-radius: 4px;
 
     &:hover {
-      background: #019C7C;
+      background: #154DA0;
     }
   }
 }

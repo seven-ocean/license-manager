@@ -234,12 +234,12 @@ const handleSubmit = () => {
         padding: 30px;
 
         &:hover {
-          border-color: #019C7C;
+          border-color: var(--el-color-primary);
         }
       }
 
       .upload-link {
-        color: #019C7C;
+        color: var(--el-color-primary);
         text-decoration: underline;
       }
 
@@ -264,13 +264,13 @@ const handleSubmit = () => {
   gap: 16px;
 
   .btn-submit {
-    background-color: #019C7C;
-    border-color: #019C7C;
+    background-color: var(--el-color-primary);
+    border-color: var(--el-color-primary);
     padding: 8px 32px;
 
     &:hover {
-      background-color: #017c63;
-      border-color: #017c63;
+      background-color: #154DA0;
+      border-color: #154DA0;
     }
   }
 

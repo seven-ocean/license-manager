@@ -641,7 +641,7 @@ onMounted(() => {
       transition: color 0.3s;
 
       &:hover {
-        color: #019C7C;
+        color: var(--el-color-primary);
       }
     }
 
@@ -694,12 +694,12 @@ onMounted(() => {
     }
 
     &:hover {
-      background: rgba(0, 194, 124, 0.08);
+      background: rgba(31, 109, 216, 0.08);
     }
 
     &.active {
-      background: rgba(0, 194, 124, 0.12);
-      color: #019C7C;
+      background: rgba(31, 109, 216, 0.12);
+      color: var(--el-color-primary);
       font-weight: 700;
       box-shadow: 0px 2px 32px 0px rgba(0, 0, 0, 0.02);
 
@@ -771,41 +771,41 @@ onMounted(() => {
 
   &.copy-btn {
     background: transparent;
-    color: #019C7C;
-    border: 1px solid #019C7C;
+    color: var(--el-color-primary);
+    border: 1px solid var(--el-color-primary);
 
     &:hover {
-      background: rgba(1, 156, 124, 0.1);
+      background: rgba(31, 109, 216, 0.1);
     }
   }
 
   &.update-btn {
     background: transparent;
-    color: #019C7C;
-    border: 1px solid #019C7C;
+    color: var(--el-color-primary);
+    border: 1px solid var(--el-color-primary);
 
     &:hover {
-      background: rgba(1, 156, 124, 0.1);
+      background: rgba(31, 109, 216, 0.1);
     }
   }
 
   &.renew-btn {
-    background: #00C27C;
+    background: var(--el-color-primary);
     color: white;
     border: none;
 
     &:hover {
-      background: #019C7C;
+      background: #154DA0;
     }
   }
 
   &.download-btn {
-    background: #00C27C;
+    background: var(--el-color-primary);
     color: white;
     border: none;
 
     &:hover {
-      background: #019C7C;
+      background: #154DA0;
     }
   }
 }

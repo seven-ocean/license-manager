@@ -704,7 +704,7 @@ onMounted(async () => {
   --el-pagination-bg-color: var(--app-content-bg);
   --el-pagination-text-color: var(--app-text-primary);
   --el-pagination-border-color: var(--app-border-color);
-  --el-pagination-hover-color: #019C7C;
+  --el-pagination-hover-color: var(--el-color-primary);
   
 }
 
@@ -1305,11 +1305,11 @@ onMounted(async () => {
 }
 
 :deep(.filter-select.is-focus .el-select__wrapper) {
-  box-shadow: 0 0 0 1px #019C7C inset;
+  box-shadow: 0 0 0 1px var(--el-color-primary) inset;
 }
 
 :deep(.filter-select:hover .el-select__wrapper) {
-  box-shadow: 0 0 0 1px #019C7C inset;
+  box-shadow: 0 0 0 1px var(--el-color-primary) inset;
 }
 
 /* 搜索框样式 */
@@ -1344,7 +1344,7 @@ onMounted(async () => {
 
 :deep(.search-input.is-focus .el-input__wrapper) {
   border-color: var(--el-color-primary);
-  box-shadow: 0 0 0 1px #019C7C;
+  box-shadow: 0 0 0 1px var(--el-color-primary);
 }
 
 :deep(.search-input .el-input-group__append) {
@@ -1523,10 +1523,10 @@ onMounted(async () => {
 }
 
 :deep(.el-table__body tr:hover > td) {
-  background: #e3f7f1 !important; /* 明亮突出，适合主色系，可根据品牌色微调 */
+  background: #DCE8FA !important; /* 明亮突出，适合主色系，可根据品牌色微调 */
   transition: background 0.2s;
 }
 [data-theme='dark'] :deep(.el-table__body tr:hover > td) {
-  background: rgba(16, 185, 129, 0.15) !important; /* 暗色模式下主色加透明度 */
+  background: rgba(31, 109, 216, 0.15) !important; /* 暗色模式下主色加透明度 */
 }
 </style>

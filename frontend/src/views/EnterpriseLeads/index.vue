@@ -295,7 +295,7 @@ const handleUpdate = async (updatedData: any) => {
 .stat-value {
   font-size: 28px;
   font-weight: bold;
-  color: #00a870;
+  color: var(--el-color-primary);
   line-height: 1.2;
 }
 
@@ -320,8 +320,8 @@ const handleUpdate = async (updatedData: any) => {
 }
 
 .stat-icon.contacting {
-  background: #e6f7f3;
-  color: #00a870;
+  background: #DCE8FA;
+  color: var(--el-color-primary);
 }
 
 .stat-icon.completed {
@@ -357,8 +357,8 @@ const handleUpdate = async (updatedData: any) => {
 }
 
 .search-btn {
-  background: #00a870 !important;
-  border-color: #00a870 !important;
+  background: var(--el-color-primary) !important;
+  border-color: var(--el-color-primary) !important;
   color: #fff !important;
   border-radius: 0 4px 4px 0;
   width: 44px;
@@ -404,7 +404,7 @@ const handleUpdate = async (updatedData: any) => {
 .title-bar {
   width: 4px;
   height: 18px;
-  background: #00a870;
+  background: var(--el-color-primary);
   border-radius: 2px;
 }
 
@@ -453,8 +453,8 @@ const handleUpdate = async (updatedData: any) => {
 }
 
 .btn-view, .btn-edit {
-  background: #e6f7f3 !important;
-  color: #00a870 !important;
+  background: #DCE8FA !important;
+  color: var(--el-color-primary) !important;
 }
 
 .btn-delete {
@@ -469,7 +469,7 @@ const handleUpdate = async (updatedData: any) => {
 }
 
 .pagination-container :deep(.el-pagination.is-background .el-pager li:not(.is-disabled).is-active) {
-  background-color: #00a870;
+  background-color: var(--el-color-primary);
 }
 
 @media (max-width: 1400px) {

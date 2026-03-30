@@ -286,8 +286,8 @@ const handleSave = async () => {
         align-self: flex-start;
 
         &:hover {
-            color: #00a870;
-            border-color: #00a870;
+            color: var(--el-color-primary);
+            border-color: var(--el-color-primary);
         }
     }
 }
@@ -318,8 +318,8 @@ const handleSave = async () => {
     }
 
     .btn-save {
-        background-color: #00a870 !important;
-        border-color: #00a870 !important;
+        background-color: var(--el-color-primary) !important;
+        border-color: var(--el-color-primary) !important;
         color: #fff !important;
     }
 }

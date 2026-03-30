@@ -118,7 +118,7 @@ const handleSubmit = async () => {
   padding: 0;
 
   :deep(.el-dialog__header) {
-    background-color: #019C7C;
+    background-color: var(--el-color-primary);
     margin: 0;
     padding: 16px 24px;
     
